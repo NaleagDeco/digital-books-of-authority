@@ -1,0 +1,56 @@
+<html>
+<head>
+<title="Digital Books of Authority">
+<script src="//code.jquery.com/jquery-latest.min.js"> </script>
+<head>
+<body>
+<form action="/cases" method="post">
+<div style="width:70%; margin-left:15%; border: 2px solid black;"> 
+ <p align="right">Court File No. <input type="text" name="courtnumber" placeholder="AKB0048"></p>
+<p align="center"><input type="text" size="62" name="jurisdiction" placeholder="ONTARIO SUPERIOR COURT OF JUSTICE DIVISINAL COURT"</p>
+<p>B E T W E E N: </p>
+<p align="center"><input type="text" name="party1name" placeholder="DONALD DUCK"></p>
+<p align="right"><input type="text" name="party1style" placeholder="Appellant"></p>
+<p align="center"> -and-</p>
+<p align="center"><input type="text" name="party2name" placeholder="MICKEY MOUSE"></p>
+<p align="right"><input type="text" name="party2style" placeholder="Respondent"></p>
+<p align="center"> BOOK OF AUTHORITIES </p>
+<p align="right" margin-right="10%"><textarea rows="7" cols="50" name="sender">Smith and Smithson
+Barristers and Solicitors
+444 Bay Street East
+Toronto Ontario, M5A 1L4
+Tel: (555)555-5555
+Fax: (555)555-5555
+Lawyers for the Appelant Donald Duck
+</textarea>
+</p>
+<p>TO: <strong>THIS HONOURABLE COURT</strong></p>
+<p>AND TO:<br>
+	<textarea rows="7" cols="50" name="receiveraddress">John and Johnson
+Barristers and Solicitors
+445 Bay Street East
+Toronto Ontario, M5A 1L4
+Tel: (555)555-5555
+Fax: (555)555-5555
+Lawyers for the Respondent Mickey Mouse
+</textarea></p>
+</div>
+#decision0
+<p> City of Case: <input type="text" name="city"></p>
+<p> Decision 1: <input label="Decision 0" type="url" name="decisionurl10" <img src="glyphicons_190_circle_plus.png" alt="add more" height="42" width="42"> </p>
+<input type="submit">
+</form>
+</body>
+<script>
+$(document).ready(function() {
+      var counter = 1;
+      $('img.addButton').click(function() {
+      var last_num = counter - 1;
+      var new_div = $('<div id=\'decision' + counter + '\'></div>');
+      new_div.append('<label>Decision ' + counter + '</label>');
+      new_div.append('<input type=\'url\' name=\'decisionurl\'' + counter + '\'></input>');
+      $('#decision' + last_num).append(new_div);
+      counter += 1;
+      });
+      });
+      </script>
